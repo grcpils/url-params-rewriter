@@ -1,0 +1,32 @@
+{
+  "name": "url-params-rewriter",
+  "version": "1.0.0",
+  "description": "Get param in original url and update all tagged link in page",
+  "main": "url-rewriter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grcpils/url-params-rewriter.git"
+  },
+  "keywords": [
+    "url"
+  ],
+  "author": "P.Gouerec",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grcpils/url-params-rewriter/issues"
+  },
+  "homepage": "https://github.com/grcpils/url-params-rewriter#readme",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
