@@ -1,6 +1,6 @@
 {
   "name": "url-params-rewriter",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "Get param in original url and update all tagged link in page",
   "main": "url-rewriter.js",
   "scripts": {
