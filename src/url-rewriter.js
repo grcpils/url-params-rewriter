@@ -1,13 +1,15 @@
 var urlCurrentParam = getAllUrlParams();
 var urlRewriterItems = document.getElementsByClassName('url-rewriter');
-const regex = "^https:\/\/[a-zA-Z0-9.]*\/";
+const regex = "^(https|http):\/\/[a-zA-Z0-9.\/:]*\/|\?";
 
-for (item of urlRewriterItems) {
-  var urlParam = getAllUrlParams(item.href);
-  var urlBase = item.href.match(regex);
-  var newUrlParam = {...urlParam, ...urlCurrentParam};
-  item.href = urlParamConstructor(urlBase[0], newUrlParam);
-}
+window.addEventListener('load', function() {
+  for (var item of urlRewriterItems) {
+    var urlParam = getAllUrlParams(item.href);
+    var urlBase = item.href.match(regex);
+    var newUrlParam = {...urlParam, ...urlCurrentParam};
+    item.href = urlParamConstructor(urlBase[0], newUrlParam);
+  }
+})
 
 function urlParamConstructor(url, params) {
   var newUrl = url;
