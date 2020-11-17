@@ -6,6 +6,7 @@ for (var item of urlRewriterItems) {
   var urlParam = getAllUrlParams(item.href);
   var urlBase = item.href.match(regex);
   var newUrlParam = {...urlParam, ...urlCurrentParam};
+  console.log(urlParam);
   if (urlBase == null) {
     console.error(`base url for ${item.href} is not correct or doesn't match the correct patern ! (/^(https|http)\:\/\/[a-zA-Z0-9.\/:]*\//)`);
   }
@@ -40,7 +41,10 @@ function getAllUrlParams(url) {
       var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
       
       paramName = paramName.toLowerCase();
-      if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+      if (typeof paramValue === 'string') {
+        if (paramName != "lang")
+          paramValue = paramValue.toLowerCase();
+      }
       
       if (paramName.match(/\[(\d+)?\]$/)) {
         var key = paramName.replace(/\[(\d+)?\]/, '');
